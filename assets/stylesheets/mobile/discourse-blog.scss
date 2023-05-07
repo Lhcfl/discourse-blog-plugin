@@ -1,0 +1,40 @@
+#list-area.blog {
+  .contents {
+    .topic-list {
+      width: 100%;
+
+      tbody {
+        width: 100%;
+
+        .blog-item {
+          max-width: 100%;
+          width: 100%;
+          box-sizing: border-box;
+
+          .blog-item-thumbnail {
+            float: initial;
+            margin-bottom: 10px;
+
+            img {
+              height: 200px !important;
+              width: 100% !important;
+            }
+          }
+
+          .blog-item-title {
+            margin-bottom: 5px;
+
+            a {
+              font-size: 25px;
+              line-height: 34px;
+            }
+          }
+
+          .blog-item-body {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

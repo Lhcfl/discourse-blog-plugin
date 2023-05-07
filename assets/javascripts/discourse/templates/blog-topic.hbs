@@ -1,0 +1,81 @@
+<div class="blog-area">
+
+  <div class="blog-topic-contents">
+    {{log "喵喵喵"}}
+    {{log this}}
+    <div class="topic-title">
+      <h1>
+        {{{topic.fancyTitle}}}
+      </h1>
+      <div class="infomations">
+        {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+        <div class="pull-right">
+          <span class="num views {{topic.viewsHeat}} topic-list-data">
+            {{d-icon "far-eye"}}
+            {{number topic.views numberKey="views_long"}}
+          </span>
+          <span class="num likes">
+            {{d-icon "far-heart"}}
+            {{number topic.op_like_count}}
+          </span>
+          <span class="num replies">
+            {{d-icon "far-comment"}}
+            {{number topic.replyCount}}
+          </span>
+          <span
+            class="num created-at
+              {{cold-age-class
+                topic.createdAt
+                startDate=topic.bumpedAt
+                class=""
+              }}
+              activity"
+            title="{{html-safe topic.createdAtTitle}}"
+          >
+            {{d-icon "far-clock"}}
+            {{~format-date topic.createdAt format="tiny" noTitle="true"~}}
+          </span>
+        </div>
+
+      </div>
+    </div>
+    <div class="content">
+      <div class="cooked">
+        {{{topic.blogPost.cooked}}}
+      </div>
+    </div>
+    <div class="comments">
+      <hr />
+      <p> 评论区 </p>
+      {{#each topic.post_stream.posts as |p|}}
+        {{#if p.cooked}}
+
+          <hr />
+          <div class="comment">
+            {{avatar p imageSize="large"}}
+            <div class="post">
+              <div class="metadata">
+                <div class="user-title">
+                  {{p.username}}
+                  {{p.name}}
+                  {{p.usertitle}}
+                </div>
+                <div class="date">
+                  {{~format-date p.created_at format="tiny" noTitle="true"~}}
+                </div>
+              </div>
+              <div class="cooked">
+                {{{p.cooked}}}
+                {{log p}}
+              </div>
+            </div>
+          </div>
+        {{/if}}
+      {{/each}}
+      <hr />
+    </div>
+
+  </div>
+
+  {{raw "blog-sidebar/blog-sidebar" model=model}}
+</div>

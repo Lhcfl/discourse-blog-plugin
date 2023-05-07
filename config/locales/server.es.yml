@@ -1,0 +1,10 @@
+en:
+  site_settings:
+    discourse_blog_enabled: "Noticias habilitadas"
+    discourse_blog_source: "Fuentes de Noticias"
+    discourse_blog_category: "Categoría de Noticias"
+    discourse_blog_rss: "RSS feed de Noticias"
+    discourse_blog_icon: "Icon de Noticias (font awesome class o URL de imagen)"
+    
+    errors:
+      topic_list_previews_not_installed: "El plugin de Noticias requiere que esté instalado el plugin Topic List Previews"

@@ -1,0 +1,8 @@
+<div class="blog-sidebar">
+  <div class="blog-sidebar-title">
+    {{avatar model.params.user.user imageSize="huge"}}
+    <h2>
+      {{model.params.username}} Blog
+    </h2>
+  </div>
+</div>

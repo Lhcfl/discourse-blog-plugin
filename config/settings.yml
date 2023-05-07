@@ -1,4 +1,8 @@
 plugins:
-  plugin_name_enabled:
-    default: true
+  discourse_blog_enabled:
+    default: false
+    client: true
+  discourse_blog_category:
+    type: category_list
+    default: ''
     client: true

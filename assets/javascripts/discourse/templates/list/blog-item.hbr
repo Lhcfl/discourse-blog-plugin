@@ -1,0 +1,44 @@
+<td class='main-link blog-item clearfix' colspan="{{titleColSpan}}">
+  
+
+  
+  <div class="blog-item-body">
+    {{#if topic.image_url}}
+      <a class="blog-item-thumbnail" href='{{topic.blogUrl}}' style="background-image: url({{topic.image_url}});">
+        {{!-- <img src={{topic.image_url}} loading="lazy"> --}}
+      </a>
+    {{/if}}
+
+    {{raw "list/blog-item-title" topic=topic}}
+    {{{topic.excerpt}}}
+  </div>
+
+  <div class="blog-item-gutter">
+    <div class="infomations">
+      {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+      <div class="pull-right">
+        <span class="num views {{topic.viewsHeat}} topic-list-data">
+          {{d-icon "far-eye"}}
+          {{number topic.views numberKey="views_long"}}
+        </span>
+        <span class="num likes">
+          {{d-icon "far-heart"}}
+          {{number topic.op_like_count}}
+        </span>
+        <span class="num replies">
+          {{d-icon "far-comment"}}
+          {{number topic.replyCount}}
+        </span>
+        <span class="num created-at {{cold-age-class topic.createdAt startDate=topic.bumpedAt class=""}} activity" title="{{html-safe topic.createdAtTitle}}">
+          {{d-icon "far-clock"}}
+          {{~format-date topic.createdAt format="tiny" noTitle="true"~}}
+        </span>
+      </div>
+
+    </div>
+    
+    <button class="share btn-flat no-text btn-icon">
+      {{d-icon 'link'}}
+    </button>
+  </div>
+</td>

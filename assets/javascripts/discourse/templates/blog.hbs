@@ -1,0 +1,36 @@
+
+<div class="blog-area">
+  <div class="blogs-list topic-list-contents">
+    {{#discovery-topics-list
+      model=model
+      refresh=(action "refresh")
+      as |discoveryTopicList|
+    }}
+      {{#if hasTopics}}
+        {{topic-list
+          top=top
+          showTopicPostBadges=showTopicPostBadges
+          showPosters=true
+          canBulkSelect=canBulkSelect
+          changeSort=(action "changeSort")
+          toggleBulkSelect=(action "toggleBulkSelect")
+          hideCategory=model.hideCategory
+          order=order
+          ascending=ascending
+          bulkSelectEnabled=bulkSelectEnabled
+          selected=selected
+          expandGloballyPinned=expandGloballyPinned
+          expandAllPinned=expandAllPinned
+          category=category
+          topics=model.topics
+          discoveryList=true
+          scrollOnLoad=true
+          onScroll=discoveryTopicList.saveScrollPosition
+        }}
+      {{/if}}
+    {{/discovery-topics-list}}
+  </div>
+
+  {{raw "blog-sidebar/blog-sidebar" model=model}}
+
+</div>

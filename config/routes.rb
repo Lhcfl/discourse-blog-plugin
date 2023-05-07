@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
-MyPluginModule::Engine.routes.draw do
-  get "/examples" => "examples#index"
-  # define routes here
+Discourse::Application.routes.prepend do
+  get 'blog/:username' => 'list#blog'
+  get 'blog/:username/t/:slug/:id' => 'blog_topics#blog_show'
+  get 'blog/:username/t/:slug/:id/:postnumber' => 'blog_topics#blog_show'
 end
-
-Discourse::Application.routes.draw { mount ::MyPluginModule::Engine, at: "my-plugin" }

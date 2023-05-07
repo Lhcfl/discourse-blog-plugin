@@ -1,0 +1,16 @@
+<div class="blog-item-title">
+  <span class='link-top-line'>
+    <a href="{{topic.blogUrl}}" class="title">{{{topic.title}}}</a>
+  </span>
+  
+  <div class="link-bottom-line">
+    {{!-- <div class="blog-item-author">
+      {{topic.creator.displayName}}
+    </div> --}}
+    {{#if topic.created_at}}
+      <div class="blog-item-date">
+        {{raw-date topic.created_at}}
+      </div>
+    {{/if}}
+  </div>
+</div>

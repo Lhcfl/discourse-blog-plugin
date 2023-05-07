@@ -1,1 +1,13 @@
 en:
+  site_settings:
+    discourse_blog_enabled: "blog enabled"
+    discourse_blog_source: "blog source"
+    discourse_blog_category: "blog category"
+    discourse_blog_rss: "blog rss feed"
+    discourse_blog_title_below_image: "Display blog item title below featured image"
+    discourse_blog_icon: "blog icon (font awesome class or image url)"
+    discourse_blog_show_reply_count: "Show reply count in blog items (category source only)"
+    discourse_blog_sort: "Topic property to sort blog items by."
+    discourse_blog_sidebar_topic_list: "Show topic list in sidebar on blog route."
+    discourse_blog_sidebar_topic_list_filter: "Filter to use in blog sidebar topic list"
+    discourse_blog_sidebar_topic_list_limit: "blog sidebar topic list limit"
